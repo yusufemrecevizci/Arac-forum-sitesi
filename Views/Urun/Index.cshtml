@@ -4,9 +4,24 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
+
+<script>
+    $(document).ready(function () {
+        $('#myTable').DataTable(
+            {
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Turkish.json"
+                }
+            }
+
+        );
+}   );
+</script>
+
+
 <h2>Urunler</h2>
 <a class="btn btn-default" href="/Urun/Create/">Yeni Ekle</a>
-<table class="table table-striped">
+<table class="table table-striped" id="myTable">
     <thead>
         <tr>
             <th>#</th>

@@ -14,9 +14,13 @@ namespace Odev.Controllers
     {
         private AraçKiralamaDBContext db = new AraçKiralamaDBContext();
         // GET: Blog
+
+        
+
         public ActionResult Index()
         {
-            return View(db.Blog.ToList().OrderByDescending(x=>x.BlogId));
+            db.Configuration.LazyLoadingEnabled = false;
+            return View(db.Blog.Include("Kategori").ToList().OrderByDescending(x=>x.BlogId));
         }
         public ActionResult Create()
         {
@@ -93,6 +97,7 @@ namespace Odev.Controllers
             return View(blog);
         }
 
+        [HttpPost]
         public ActionResult Delete(int id)
         {
             var b = db.Blog.Find(id);
