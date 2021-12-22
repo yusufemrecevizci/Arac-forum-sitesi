@@ -83,37 +83,40 @@
                     <div class="row">
                         <div class="col-lg-3">
                             <div class="widget">
-                                <h5 class="widgetheading">Get in touch with us</h5>
+                                <h5 class="widgetheading">M&Y-CAR RENT A CAR</h5>
                                 <address>
-                                    <strong>Moderna company Inc</strong><br>
-                                    Modernbuilding suite V124, AB 01<br>
-                                    Someplace 16425 Earth
+                                    <strong>@ViewBag.Iletisim.Adres</strong><br>
+                                    
                                 </address>
                                 <p>
-                                    <i class="icon-phone"></i> (123) 456-7890 - (123) 555-7891 <br>
-                                    <i class="icon-envelope-alt"></i> email@domainname.com
+                                    <i class="icon-phone"></i>Tel: @ViewBag.Iletisim.Telefon<br>
+                                    <i class="icon-phone"></i>Whatsapp: @ViewBag.Iletisim.Whatsapp<br>
+                                    <i class="icon-envelope-alt"></i>Fax: @ViewBag.Iletisim.Fax
                                 </p>
                             </div>
                         </div>
                         <div class="col-lg-3">
                             <div class="widget">
-                                <h5 class="widgetheading">Pages</h5>
+                                <h5 class="widgetheading">Menü</h5>
                                 <ul class="link-list">
-                                    <li><a href="#">Press release</a></li>
-                                    <li><a href="#">Terms and conditions</a></li>
-                                    <li><a href="#">Privacy policy</a></li>
-                                    <li><a href="#">Career center</a></li>
-                                    <li><a href="#">Contact us</a></li>
+                                    <li><a href="/Home/Index/">Ana Sayfa</a></li>
+                                    <li><a href="/Home/Hakkimizda/">Hakkımızda</a></li>
+                                    <li><a href="/Home/Blog/">Blog</a></li>
+                                    <li><a href="/Home/Urun/">Ürünler</a></li>
+                                    <li><a href="/Home/Iletisim/">İletişim</a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="col-lg-3">
                             <div class="widget">
-                                <h5 class="widgetheading">Latest posts</h5>
+                                <h5 class="widgetheading">Bloglar</h5>
                                 <ul class="link-list">
-                                    <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
-                                    <li><a href="#">Pellentesque et pulvinar enim. Quisque at tempor ligula</a></li>
-                                    <li><a href="#">Natus error sit voluptatem accusantium doloremque</a></li>
+                                    @foreach (var item in ViewBag.Blog)
+                                    {
+                                        <li><a href="/Home/BlogDetay/@item.BlogId">@item.Baslik</a></li>
+                                    }
+
+
                                 </ul>
                             </div>
                         </div>

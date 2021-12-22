@@ -13,6 +13,12 @@ namespace Odev.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            ViewBag.Urunler = db.Urun.ToList().OrderByDescending(x => x.UrunId);
+
+            ViewBag.Iletisim = db.Iletisim.SingleOrDefault();
+
+            ViewBag.Blog = db.Blog.ToList().OrderByDescending(x => x.BlogId);
+
             return View();
         }
 
@@ -20,6 +26,11 @@ namespace Odev.Controllers
         {
             return View(db.Slider.ToList().OrderByDescending(x=>x.SliderId));
 
+        }
+        
+        public ActionResult UrunPartial()
+        {
+            return View(db.Urun.ToList());
         }
     }
 }
