@@ -1202,6 +1202,7 @@
     <Content Include="Content\SiteLayout\img\dummies\dummy-1.jpg" />
     <Content Include="Content\SiteLayout\img\glyphicons-halflings-white.png" />
     <Content Include="Content\SiteLayout\img\glyphicons-halflings.png" />
+    <Content Include="Content\SiteLayout\img\logo.png" />
     <Content Include="Content\SiteLayout\img\nivo-bullets.png" />
     <Content Include="Content\SiteLayout\img\slides\1.jpg" />
     <Content Include="Content\SiteLayout\img\slides\2.jpg" />
@@ -1617,6 +1618,10 @@
     <Content Include="Views\Slider\Edit.cshtml" />
     <Content Include="Views\Slider\Index.cshtml" />
     <Content Include="Views\Home\SliderPartial.cshtml" />
+    <Content Include="Views\Home\Hakkimizda.cshtml" />
+    <Content Include="Views\Home\FooterPartial.cshtml" />
+    <Content Include="Views\Home\Araclarimiz.cshtml" />
+    <Content Include="Views\Home\Iletisim.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

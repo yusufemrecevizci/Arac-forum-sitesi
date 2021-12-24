@@ -1,0 +1,17 @@
+﻿@model Odev.Models.Model.Hakkimizda
+@{
+    ViewBag.Title = "Hakkımızda";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+<div class="container">
+<div class="col-md-12">
+    <h4>M&Y-CAR HAKKINDA</h4>
+    <div align="center" ><img src="~/Content/SiteLayout/img/logo.png" alt="" class="align-center img-box img-responsive" /></div>
+    <p>
+        @Html.Raw(Model.Aciklama)
+    </p>
+</div>
+</div>
+
+
