@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Odev.Models.Model.Blog>
+
+
+
+@foreach (var item in Model)
+{
+<li>
+
+    <h6><a href="/Home/BlogDetay/@item.BlogId">@item.Baslik</a></h6>
+
+
+    <img src="@item.ResimURL" alt="@item.Baslik" width="200" height="150" />
+    <br>
+
+    </br>
+
+
+</li>
+
+
+}

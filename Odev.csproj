@@ -1622,6 +1622,10 @@
     <Content Include="Views\Home\FooterPartial.cshtml" />
     <Content Include="Views\Home\Araclarimiz.cshtml" />
     <Content Include="Views\Home\Iletisim.cshtml" />
+    <Content Include="Views\Home\Blog.cshtml" />
+    <Content Include="Views\Home\BlogKategoriPartial.cshtml" />
+    <Content Include="Views\Home\BlogKayitPartial.cshtml" />
+    <Content Include="Views\Home\BlogDetay.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

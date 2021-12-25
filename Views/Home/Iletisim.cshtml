@@ -18,11 +18,11 @@
             <div class="col-md-3 col-md-offset-4">
                 <h4><strong>Bu form ile bize ulaşabilirsiniz.</strong></h4>
 
-                <div class="alert alert-info" id="sendmessage">@ViewBag.Uyari</div>
-                <div id="errormessage"></div>
+                <div class="alert alert-info">@ViewBag.Uyari</div>
+                
                 <form action="/Home/Iletisim/" method="post" role="form" class="contactForm">
                     <div class="form-group">
-                        <input type="text" name="adsoyad" class="form-control" id="name" placeholder="Ad-Soyad" data-rule="minlen:4" data-msg="En az 4 karakter giriniz!"/>
+                        <input type="text" name="adsoyad" class="form-control" id="name" placeholder="Ad-Soyad" data-rule="minlen:4" data-msg="En az 4 karakter giriniz!" />
                         <div class="validation"></div>
                     </div>
                     <div class="form-group">
@@ -39,6 +39,7 @@
                     </div>
 
                     <div class="text-center"><button type="submit" class="btn btn-theme">Gönder</button></div>
+                    
                 </form>
             </div>
         </div>

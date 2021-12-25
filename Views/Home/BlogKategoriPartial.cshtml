@@ -1,0 +1,8 @@
+﻿@model IEnumerable<Odev.Models.Model.Kategori>
+<ul class="cat">
+    @foreach (var item in Model)
+    {
+        <li><i class="icon-angle-right"></i><a href="/Home/Blog/@item.KategoriId">@item.KategoriAd</a><span>(@item.Blogs.Count())</span></li>
+    }
+
+</ul>

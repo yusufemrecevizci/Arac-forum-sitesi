@@ -55,10 +55,10 @@ namespace Odev.Controllers
             {
                 WebMail.SmtpServer = "smtp.gmail.com";
                 WebMail.EnableSsl = true;
-                WebMail.UserName = "yusuf.cevizci@ogr.sakarya.edu.tr";
+                WebMail.UserName = "odev.mail54@gmail.com";
                 WebMail.Password = "ysfemre12";
                 WebMail.SmtpPort = 587;
-                WebMail.Send("yusuf.cevizci@ogr.sakarya.edu.tr", konu, email, mesaj);
+                WebMail.Send("odev.mail54@gmail.com", konu, email, mesaj);
                 ViewBag.Uyari = "Mesajınız Başarıyla Gönderildi.";
                 
             }
@@ -67,6 +67,27 @@ namespace Odev.Controllers
                 ViewBag.Uyari = "Hata Oluştu! Tekrar Deneyin.";
             }
             return View();
+        }
+
+        public ActionResult Blog()
+        {
+            return View(db.Blog.Include("Kategori").ToList().OrderByDescending(x=>x.BlogId));
+        }
+
+        public ActionResult BlogDetay(int id)
+        {
+            var b = db.Blog.Include("Kategori").Where(x => x.BlogId == id).SingleOrDefault();
+            return View(b);
+        }
+
+        public ActionResult BlogKategoriPartial()
+        {
+            return PartialView(db.Kategori.Include("Blogs").ToList().OrderBy(x => x.KategoriAd));
+        }
+
+        public ActionResult BlogKayitPartial()
+        {
+            return PartialView(db.Blog.ToList().OrderByDescending(x=>x.BlogId));
         }
 
         public ActionResult FooterPartial()
@@ -79,6 +100,8 @@ namespace Odev.Controllers
 
             return PartialView();   
         }
+
+
 
     }
 }
