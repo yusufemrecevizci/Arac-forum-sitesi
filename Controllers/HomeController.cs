@@ -18,6 +18,7 @@ namespace Odev.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            ViewBag.Kimlik = db.Kimlik.SingleOrDefault();
             ViewBag.Urunler = db.Urun.ToList().OrderByDescending(x => x.UrunId);
 
             return View();
@@ -57,11 +58,11 @@ namespace Odev.Controllers
             if (adsoyad != null && email != null)
             {
                 WebMail.SmtpServer = "smtp.gmail.com";
+                WebMail.SmtpPort = 25;
                 WebMail.EnableSsl = true;
-                WebMail.UserName = "odev.mail54@gmail.com";
-                WebMail.Password = "ysfemre12";
-                WebMail.SmtpPort = 587;
-                WebMail.Send("odev.mail54@gmail.com", konu, email, mesaj);
+                WebMail.UserName = "ysfcvz7898@gmail.com";
+                WebMail.Password = "ysfemre123";
+                WebMail.Send("ysfcvz7898@gmail.com", konu, email, mesaj);
                 ViewBag.Uyari = "Mesajınız Başarıyla Gönderildi.";
                 
             }
