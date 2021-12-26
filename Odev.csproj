@@ -57,6 +57,12 @@
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -524,6 +530,7 @@
     <Content Include="Content\AdminLayout\img\chat-avatar.jpg" />
     <Content Include="Content\AdminLayout\img\chat-avatar2.jpg" />
     <Content Include="Content\AdminLayout\img\customSelect-arrow.gif" />
+    <Content Include="Content\AdminLayout\img\foto.png" />
     <Content Include="Content\AdminLayout\img\geekslabs.png" />
     <Content Include="Content\AdminLayout\img\Germany.png" />
     <Content Include="Content\AdminLayout\img\icons\line-icon-c.png" />
@@ -1170,6 +1177,7 @@
     <Content Include="Content\DataTables\images\sort_desc.png" />
     <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
     <Content Include="Content\DataTables\swf\flashExport.swf" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\SiteLayout\blog.html" />
     <Content Include="Content\SiteLayout\components.html" />
@@ -1545,6 +1553,7 @@
     <Compile Include="Controllers\KimlikController.cs" />
     <Compile Include="Controllers\SliderController.cs" />
     <Compile Include="Controllers\UrunController.cs" />
+    <Compile Include="Controllers\YorumController.cs" />
     <Compile Include="db\Configuration\LazyLoadingEnabled.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1559,6 +1568,7 @@
     <Compile Include="Models\Model\Kimlik.cs" />
     <Compile Include="Models\Model\Slider.cs" />
     <Compile Include="Models\Model\Urun.cs" />
+    <Compile Include="Models\Model\Yorum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1626,6 +1636,12 @@
     <Content Include="Views\Home\BlogKategoriPartial.cshtml" />
     <Content Include="Views\Home\BlogKayitPartial.cshtml" />
     <Content Include="Views\Home\BlogDetay.cshtml" />
+    <Content Include="Views\Yorum\Create.cshtml" />
+    <Content Include="Views\Yorum\Delete.cshtml" />
+    <Content Include="Views\Yorum\Details.cshtml" />
+    <Content Include="Views\Yorum\Edit.cshtml" />
+    <Content Include="Views\Yorum\Index.cshtml" />
+    <Content Include="Views\Home\KategoriBlog.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -76,3 +76,7 @@ C:\Users\Yusuf\Desktop\Proje\Odev\bin\EntityFramework.dll
 C:\Users\Yusuf\Desktop\Proje\Odev\bin\EntityFramework.SqlServer.dll
 C:\Users\Yusuf\Desktop\Proje\Odev\bin\EntityFramework.xml
 C:\Users\Yusuf\Desktop\Proje\Odev\bin\EntityFramework.SqlServer.xml
+C:\Users\Yusuf\Desktop\Proje\Odev\bin\PagedList.dll
+C:\Users\Yusuf\Desktop\Proje\Odev\bin\PagedList.Mvc.dll
+C:\Users\Yusuf\Desktop\Proje\Odev\bin\PagedList.xml
+C:\Users\Yusuf\Desktop\Proje\Odev\bin\PagedList.Mvc.xml

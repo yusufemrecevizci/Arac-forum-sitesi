@@ -6,6 +6,9 @@ using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
 using System.Text.RegularExpressions;
+using PagedList;
+using PagedList.Mvc;
+using Odev.Models.Model;
 
 namespace Odev.Controllers
 {
@@ -69,15 +72,33 @@ namespace Odev.Controllers
             return View();
         }
 
-        public ActionResult Blog()
+        public ActionResult Blog(int Sayfa = 1)
         {
-            return View(db.Blog.Include("Kategori").ToList().OrderByDescending(x=>x.BlogId));
+            return View(db.Blog.Include("Kategori").OrderByDescending(x=>x.BlogId).ToPagedList(Sayfa,4));
+        }
+
+        public ActionResult KategoriBlog(int id, int Sayfa = 1)
+        {
+            var b = db.Blog.Include("Kategori").OrderByDescending(x=>x.BlogId).Where(x => x.Kategori.KategoriId == id).ToPagedList(Sayfa, 5);
+            return View(b);
         }
 
         public ActionResult BlogDetay(int id)
         {
-            var b = db.Blog.Include("Kategori").Where(x => x.BlogId == id).SingleOrDefault();
+            var b = db.Blog.Include("Kategori").Include("Yorums").Where(x => x.BlogId == id).SingleOrDefault();
             return View(b);
+        }
+
+        public JsonResult YorumYap(string adsoyad, string eposta, string icerik, int blogid) 
+        {
+            if (icerik == null)
+            {
+                return Json(true, JsonRequestBehavior.AllowGet);
+            }
+            db.Yorum.Add(new Yorum { AdSoyad = adsoyad, Eposta = eposta, Icerik = icerik, BlogId = blogid, Onay = false });
+            db.SaveChanges();
+            
+            return Json(false, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult BlogKategoriPartial()

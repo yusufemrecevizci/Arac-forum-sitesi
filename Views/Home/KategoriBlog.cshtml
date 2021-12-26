@@ -1,10 +1,12 @@
-﻿@using PagedList;
+﻿@model IPagedList<Odev.Models.Model.Blog>
+@using PagedList;
 @using PagedList.Mvc;
-@model IPagedList<Odev.Models.Model.Blog>
 @{
-    ViewBag.Title = "Blog";
+    ViewBag.Title = "KategoriBlog";
     Layout = "~/Views/Shared/_SiteLayout.cshtml";
 }
+
+<h2>KategoriBlog</h2>
 
 <section id="inner-headline">
     <div class="container">
@@ -12,7 +14,7 @@
             <div class="col-lg-12">
                 <ul class="breadcrumb">
                     <li><a href="#"><i class="fa fa-home"></i></a><i class="icon-angle-right"></i></li>
-                    <li class="active">Blog</li>
+                    <li class="active">Blog Kategori</li>
                 </ul>
             </div>
         </div>
@@ -48,7 +50,7 @@
 
 
                 <div id="pagination">
-                    @Html.PagedListPager(Model,Sayfa=>Url.Action("Blog",new { Sayfa}),PagedListRenderOptions.Classic)
+                    @Html.PagedListPager(Model, Sayfa => Url.Action("Blog", new { Sayfa }), PagedListRenderOptions.Classic)
                 </div>
             </div>
             <div class="col-lg-4">
@@ -60,19 +62,19 @@
                     </div>
                     <div class="widget">
                         <h5 class="widgetheading">Kategoriler</h5>
-                        @{ 
+                        @{
                             Html.RenderAction("BlogKategoriPartial", "Home");
                         }
                     </div>
                     <div class="widget">
                         <h5 class="widgetheading">Son Bloglar</h5>
                         <ul class="recent">
-                            @{ 
+                            @{
                                 Html.RenderAction("BlogKayitPartial", "Home");
                             }
                         </ul>
                     </div>
-                    
+
                 </aside>
             </div>
         </div>
